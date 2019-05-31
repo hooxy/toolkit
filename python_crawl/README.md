@@ -1,3 +1,8 @@
+>为了做教学比赛的课件，在百度搜包图网，结果单纯的我被钓鱼到另外一个盗版模版网站上，终身会员只要39.财大气粗如我立马扫码办会员，不幸的是，同事告诉我这种网站很容易收钱跑路，时刻面临着网站打不开的危险。   
+>想来想去，只有趁它倒闭之前把资源下完才对得起我的终身会员。所以有了这个工作，代码50多行，涉及到模拟浏览器行为的seleniu库和XPath，还有少许文件操作。
+
+***建议代码在jupyter notebook上分段运行，尤其是下载部分和文件操作部分，避免下载时间太长，文件操作与下载出现冲突***
+
 # 1. 安装
 ```
 pip install selenium
@@ -31,7 +36,7 @@ import os, time, shutil
 - 4.1 分析
   - 网页上有许多ppt模版缩略图，每个模版下方有一个下载按钮，点击该按钮可以自动下载文件至浏览器的默认下载路径中，因此用Selenium进行模拟点击。
   - 底部有下一页，可以利用模拟点击下一页来换页。一个更简单的方法是，每一页的地址存在模式，因此只需要如下更新url即可：   
-  ```url = r"https://www.bangongziyuan.com/ppt/pn-{}.html".format(page)```
+  ```url = r"https://www.＊＊＊＊＊.com/ppt/pn-{}.html".format(page)```
 - 4.2 实施
   - 将光标置于任意一个模版的下载按钮，右键选择**“检查”**, 在**Element**标签中对应元素上面，右键选择**Copy -> Copy XPath**, 得到该元素的XPath，通过以下代码模拟点击，就可以将文件自动下载至3.2中所设置的下载路径中。
 ```browser.find_element_by_xpath(XPath).click() ```   
@@ -66,8 +71,8 @@ import os, time, shutil
 
 
 
-＃ 参考知识：
-http://www.testclass.net/selenium_python/find-element/   
+# 参考知识：
+[selenium的一些查找方法](http://www.testclass.net/selenium_python/find-element/ )
 
 定位一个元素 | 定位多个元素 |  含义  
 :-|:-|:-
